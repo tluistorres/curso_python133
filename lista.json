@@ -1,0 +1,6 @@
+[
+    {'nome': 'João', 'notas': [3,7,8,5,1,6]},
+    {'nome': 'Maria', 'notas': [8,3,8,5,1,6]},
+    {'nome': 'Marcos', 'notas': [3,7,5,5,1,4]},
+    {'nome': 'Zacarias', 'notas': [3,7,8,7,1,6]},
+]
