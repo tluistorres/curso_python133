@@ -1,0 +1,3 @@
+Bóson Trinamentos
+Como criar um arquivo de texto com Python.
+Python é usado em ciências de dados extensivamente.
