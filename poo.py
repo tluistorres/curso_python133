@@ -83,11 +83,11 @@ class Aviao(Veiculo):
     
 if __name__ == '__main__':
 
-#    meu_veiculo = Veiculo('GM', 'Cadllac')
-#    meu_veiculo.movimentar( )
-#    meu_veiculo.get_fabr_modelo()
-#    meu_veiculo.set_num_registro("134445-8")
-#    print(f'Registro: {meu_veiculo.get_num_registro()}\n')
+    meu_veiculo = Veiculo('GM', 'Cadllac')
+    meu_veiculo.movimentar( )
+    meu_veiculo.get_fabr_modelo()
+    meu_veiculo.set_num_registro("134445-8")
+    print(f'Registro: {meu_veiculo.get_num_registro()}\n')
 
     meu_carro = Carro('Volkswagen','Polo')
     meu_carro.movimentar()
@@ -107,6 +107,8 @@ if __name__ == '__main__':
     meu_aviao.get_categoria()
     print(f'Categoria: {meu_aviao.get_categoria()}')
 
+# Saída:
+
 # Sou um veículo e me desloco!
 # Modelo: Cadllac, Fabricante: GM.
 
@@ -124,97 +126,99 @@ if __name__ == '__main__':
 
 # Categoria: Comercial.
 
-# class Televisão:
-#     def __init__(self, canal_min, canal_max):
-#         self.ligada = False
-#         self.canal = 2
-#         self.canal_min = canal_min
-#         self.canal_max = canal_max
-#     def muda_canal_para_baixo(self):
-#         if self.canal -1 >= self.canal_min:
-#             self.canal -= 1
-#     def muda_canal_para_cima(self):
-#         if self.canal + 1 <= self.canal_max:
-#             self.canal += 1
-# tv = Televisão(1, 99)
-# for x in range(0, 120):
-#     tv.muda_canal_para_cima()
-# print(tv.canal)
-# for x in range(0, 120):
-#     tv.muda_canal_para_baixo()
-# print(tv.canal)
+class Televisão:
+    def __init__(self, canal_min, canal_max):
+        self.ligada = False
+        self.canal = 2
+        self.canal_min = canal_min
+        self.canal_max = canal_max
+    def muda_canal_para_baixo(self):
+        if self.canal -1 >= self.canal_min:
+            self.canal -= 1
+    def muda_canal_para_cima(self):
+        if self.canal + 1 <= self.canal_max:
+            self.canal += 1
+tv = Televisão(1, 99)
+for x in range(0, 120):
+    tv.muda_canal_para_cima()
+print(tv.canal)
+for x in range(0, 120):
+    tv.muda_canal_para_baixo()
+print(tv.canal)
 
 # Saída: 99 e 1.
          
 # Apresenta todos os canais no max e min.
 
-# class Televisão:
-#     def __init__(self, canal_min, canal_max):
-#         self.ligada = False
-#         self.canal = canal_min
-#         self.canal_min = canal_min
-#         self.canal_max = canal_max
+class Televisão:
+    def __init__(self, canal_min, canal_max):
+        self.ligada = False
+        self.canal = canal_min
+        self.canal_min = canal_min
+        self.canal_max = canal_max
 
-#     def muda_canal_para_baixo(self):
-#         if self.ligada and self.canal - 1 >= self.canal_min:
-#             self.canal -= 1
+    def muda_canal_para_baixo(self):
+        if self.ligada and self.canal - 1 >= self.canal_min:
+            self.canal -= 1
 
-#     def muda_canal_para_cima(self):
-#         if self.ligada and self.canal + 1 <= self.canal_max:
-#             self.canal += 1
+    def muda_canal_para_cima(self):
+        if self.ligada and self.canal + 1 <= self.canal_max:
+            self.canal += 1
 
-#     def liga_desliga(self):
-#         self.ligada = not self.ligada
+    def liga_desliga(self):
+        self.ligada = not self.ligada
 
-# class Pilha:
-#     def __init__(self, energia=100):
-#         self.energia = energia
+class Pilha:
+    def __init__(self, energia=100):
+        self.energia = energia
 
-#     def consumo(self, consumo):
-#         if consumo > self.energia:
-#             consumo = self.energia
-#         self.energia -= consumo
-#         return self.energia
+    def consumo(self, consumo):
+        if consumo > self.energia:
+            consumo = self.energia
+        self.energia -= consumo
+        return self.energia
 
-# class ControleRemoto:
-#     def __init__(self, televisão, pilha):
-#         self.televisão = televisão
-#         self.pilha = pilha
+class ControleRemoto:
+    def __init__(self, televisão, pilha):
+        self.televisão = televisão
+        self.pilha = pilha
 
-#     def liga(self):
-#         if not self.televisão.ligada and self.pilha.consumo(1) > 0:
-#             self.televisão.ligada = True
+    def liga(self):
+        if not self.televisão.ligada and self.pilha.consumo(1) > 0:
+            self.televisão.ligada = True
 
-#     def desligada(self):
-#         if self.televisão.ligada and self.pilha.consumo(1) > 0:
-#             self.televisão.ligada = False
+    def desligada(self):
+        if self.televisão.ligada and self.pilha.consumo(1) > 0:
+            self.televisão.ligada = False
 
-#     def canal_mais(self):
-#         if self.pilha.consumo(1) > 0:
-#             self.televisão.muda_canal_para_cima()
+    def canal_mais(self):
+        if self.pilha.consumo(1) > 0:
+            self.televisão.muda_canal_para_cima()
 
-#     def canal_menos(self):
-#         if self.pilha.consumo(1) > 0:
-#             self.televisão.muda_canal_para_baixo()
+    def canal_menos(self):
+        if self.pilha.consumo(1) > 0:
+            self.televisão.muda_canal_para_baixo()
 
-# # Exemplo de uso
-# tv = Televisão(1, 99)
-# pilha = Pilha()
-# controle = ControleRemoto(tv, pilha)
+# Exemplo de uso:
 
-# controle.liga()
-# print(tv.ligada)
+tv = Televisão(1, 99)
+pilha = Pilha()
+controle = ControleRemoto(tv, pilha)
 
-# controle.canal_mais()
-# print(tv.canal)
+controle.liga()
+print(tv.ligada)
 
-# controle.canal_menos()
-# print(tv.canal)
+controle.canal_mais()
+print(tv.canal)
 
-# controle.desligada()
-# print(tv.ligada)
+controle.canal_menos()
+print(tv.canal)
 
-# Saída: True
+controle.desligada()
+print(tv.ligada)
+
+# Saída: 
+# True
 # 2
 # 1
 # False.
@@ -264,7 +268,6 @@ if __name__ == '__main__':
 # - Explorar o comportamento do seu script.
 
 # Exemplo de um banco:
-
 
 # Nesse exemplo, temos duas classes:
 
@@ -324,7 +327,8 @@ class Conta:
             print(f'{operação[0]:10s} {operação[1]:10.2f}')
         print(f'\n Saldo: {self.saldo:10.2f}\n')
 
-# Criação de objetos
+# Criação de objetos:
+
 joão = Cliente("João da Silva", "4579-5678")
 maria = Cliente("Maria da Silva", "7824-8085")
 conta1 = Conta([joão], 1, 1000)
@@ -409,23 +413,28 @@ class Banco:
                 return conta
         return None
 
-# Criação do banco
+# Criação do banco:
+
 banco = Banco("Banco XYZ")
 
-# Criação de clientes
+# Criação de clientes:
+
 joão = Cliente("João da Silva", "4579-5678")
 maria = Cliente("Maria da Silva", "7824-8085")
 pedro = Cliente("Pedro da Silva", "9123-4567")
 
-# Criação de contas
+# Criação de contas:
+
 conta1 = banco.criar_conta([joão], 1, 1000)
 conta2 = banco.criar_conta([maria, joão], 2, 500)
 conta3 = banco.criar_conta([pedro], 3, 2000)
 
-# Listagem de contas
+# Listagem de contas:
+
 banco.listar_contas()
 
-# Imprimir extratos das contas
+# Imprimir extratos das contas:
+
 conta1.extrato()
 conta2.extrato()
 conta3.extrato()
@@ -455,7 +464,7 @@ conta3.extrato()
 
 #  Saldo:    2000.00
 
-########################################################################################
+#######################################################################
 
 # Herança:
 
@@ -467,7 +476,7 @@ conta3.extrato()
 # 2. Hierarquia de classes: A herança ajuda a criar uma hierarquia de classes, onde as classes mais específicas herdam as propriedades e métodos das classes mais gerais.
 # 3. Flexibilidade: A herança permite que as classes filhas adicionem ou modifiquem as propriedades e métodos herdadas da classe pai.
 
-# Classe pai (ou superclasse).
+# Classe pai (ou superclasse):
 
 class Veiculo:
     def __init__(self, marca, modelo, ano):
@@ -491,9 +500,11 @@ class Carro(Veiculo):
         super().imprimir_informacoes()      # Chama o método da classe pai
         print(f"Portas: {self.portas}")
 
-meu_carro = Carro("Volkswagen", "Gol", 2015, 4)     # Criação de objetos
+meu_carro = Carro("Volkswagen", "Gol", 2015, 4)    # Criação de objetos
 
-meu_carro.imprimir_informacoes()          # Chamada ao método imprimir_informacoes()
+meu_carro.imprimir_informacoes()  
+
+# Chamada ao método imprimir_informacoes().
 
 # Saída:
 
@@ -533,7 +544,8 @@ class ContaEspecial(Conta):
         else:
             print("Saldo insuficiente")
 
-# Criação de objetos
+# Criação de objetos:
+
 conta = Conta(123, "João")
 conta_especial = ContaEspecial(456, "Maria", limite=2000)
 
@@ -555,7 +567,7 @@ print(conta_especial.consultar_saldo())  # Saída: -5
 # 1000
 # -500
 
-########################################################################################
+######################################################################
 
 # Essa classe Lista oferece métodos para adicionar, remover, buscar, imprimir, obter o tamanho, limpar, ordenar e reverter a lista.
 
@@ -683,7 +695,8 @@ class ListaUnica:
 
 lista = ListaUnica()
 
-# Adicionar elementos
+# Adicionar elementos:
+
 lista.adicionar(1)
 lista.adicionar(2)
 lista.adicionar(2)  # Não adiciona novamente o elemento 2
@@ -691,25 +704,32 @@ lista.adicionar(3)
 lista.adicionar(4)
 lista.adicionar(4)  # Não adiciona novamente o elemento 4
 
-# Imprimir lista
+# Imprimir lista:
+
 lista.imprimir()  # Saída: [1, 2, 3, 4]
 
-# Remover elemento
+# Remover elemento:
+
 lista.remover(3)
 
-# Imprimir lista
+# Imprimir lista:
+
 lista.imprimir()  # Saída: [1, 2, 4]
 
-# Buscar elemento
+# Buscar elemento:
+
 print(lista.buscar(4))  # Saída: True
 
-# Tamanho da lista
+# Tamanho da lista:
+
 print(lista.tamanho())  # Saída: 3
 
-# Limpar lista
+# Limpar lista:
+
 lista.limpar()
 
-# Imprimir lista
+# Imprimir lista:
+
 lista.imprimir()  # Saída: []
 
 # Saída:
@@ -785,16 +805,30 @@ class Nome:
     def CriaChave(nome):
         return nome.strip().lower()
     nome = Nome("João")
-print(repr(nome))  # Saída: <Class Nome em 0x7f937f16c9d0 Nome: João Chave: joão>
+print(repr(nome)) 
+
+# Saída: <Class Nome em 0x7f937f16c9d0 Nome: João Chave: joão>
 # A propriedade nome é apenas para leitura
 # João
 # <__main__.Nome object at 0x000001A99D1DD950>
 
 # Explicação deste procedimento: Pontos positivos:
-# 1. Uso de decoradores: O uso do decorador @total_ordering é uma boa prática para implementar a ordenação total na classe.
-# 2. Implementação de métodos especiais: A implementação dos métodos especiais __str__, __repr__, __eq__ e __lt__ é correta e permite uma representação adequada da classe.
-# 3. Uso de propriedades: O uso de propriedades (@property) é uma boa prática para encapsular os atributos da classe e fornecer uma interface de acesso controlada.
-# 4. Validação de dados: A validação de dados no setter da propriedade nome é uma boa prática para garantir a consistência dos dados.
+
+# 1. Uso de decoradores: 
+# 
+# O uso do decorador @total_ordering é uma boa prática para implementar a ordenação total na classe.
+
+# 2. Implementação de métodos especiais: 
+
+# A implementação dos métodos especiais __str__, __repr__, __eq__ e __lt__ é correta e permite uma representação adequada da classe.
+
+# 3. Uso de propriedades:
+ 
+# O uso de propriedades (@property) é uma boa prática para encapsular os atributos da classe e fornecer uma interface de acesso controlada.
+
+# 4. Validação de dados: 
+
+# A validação de dados no setter da propriedade nome é uma boa prática para garantir a consistência dos dados.
 
 # Código melharado segumdo o "ChapGpt" da Meta:
 
@@ -909,19 +943,25 @@ class Nome:
             str: A chave do nome.
         """
         return nome.strip().lower()
-# Criar uma instância da classe Nome
+    
+# Criar uma instância da classe Nome:
+
 nome = Nome("João")
 
-# Printar o nome
+# Printar o nome:
+
 print(nome)
 
-# Printar a chave do nome
+# Printar a chave do nome:
+
 print(nome.chave)
 
-# Criar outra instância da classe Nome
+# Criar outra instância da classe Nome:
+
 nome2 = Nome("Maria")
 
-# Comparar os nomes
+# Comparar os nomes:
+
 print(nome < nome2)  # Saída: True
 print(nome == nome2)  # Saída: False
 
@@ -943,7 +983,7 @@ print(nome == nome2)  # Saída: False
 # - Adição de raises para os métodos que podem levantar exceções.
 
 
-########################################################################################
+####################################################################
 
 # Atributos e métodos de classe:
 
@@ -993,7 +1033,7 @@ class Veiculo:
 
 carro = Veiculo("azul")   # Criar uma instância da classe
 
-# print(carro.descricao())  # Chamar o método de classe: Saída: Veiculo azul.
+print(carro.descricao())  # Chamar o método de classe: Saída: Veiculo azul.
 
 
 # Métodos Estáticos:
@@ -1010,7 +1050,10 @@ class Veiculo:
     def calcular_velocidade(distancia, tempo):
         return distancia / tempo
 
-velocidade = Veiculo.calcular_velocidade(100, 5)  # Chamar o método estático.
+velocidade = Veiculo.calcular_velocidade(100, 5)  
+
+# Chamar o método estático.
+
 print(velocidade)                 # Saída: 20.0.
 
 # Saída:
@@ -1020,4 +1063,99 @@ print(velocidade)                 # Saída: 20.0.
 # azul
 # 20.0
 
-#########################################################################################
+#######################################################################
+
+# Recursos finais:
+
+# Algoritmo para trocar valores entre duas variáveis.
+
+var1 = 12
+var2 = 31
+
+# aux = var1
+# var1 = var2
+# var2 = aux
+
+# Em Python não precisa fazer isso.
+
+# var2, var1 = var1, var2
+
+# print(f' var1: {var1}, var2: {var2}')
+
+# Operador Condicional Ternário. Verificar quais dos ddois é menores.
+
+# var1 = 12
+# var2 = 31
+
+# menor = var1 if var1 < var2 else var2 
+# print(f'Menor valor: {menor}')
+
+# Podemos fazendo uma tupla.
+
+# var1 = 60
+# var2 = 31
+
+# menor = var1 if var1 < var2 else var2 
+# print(f'Menor valor: {menor}')
+# print(f'Menor valor: {(var2,  var1)[var1 < var2]}')
+
+# Generators - serão gerados um a um, ocrrendo uma economia de dados.
+
+# valores = [1,3,4,5,6,78,9]
+# quadrados = (item**2 for item in valores)
+# print(quadrados)
+# for valor in quadrados:
+#     print(valor)
+
+# <generator object <genexpr> at 0x0000025BA664A5A0>
+# 1
+# 9
+# 16
+# 25
+# 36
+# 6084
+# 81
+
+# Função enumerate().
+# É uma função de interação. Uma sequência qualquer de listas, tuplas, dicionários, retornando os elementos e seus números de índices simultaneamente no formato de tuplas (índece,item), de forma separada ou em conjunto.
+
+# bebidas = ['Café', 'Chá','Água','Suco', 'Refrigerante']
+# for i, item in enumerate(bebidas):  # Pode ser uma tupla, um dicionário. No caso é uma Lista.
+#     print(f'Índice: {i + 1}, Item: {item}') # Caso queira que o índece comece com e não zero.
+
+# Índice: 0, Item: Café
+# Índice: 1, Item: Chá
+# Índice: 2, Item: Água
+# Índice: 3, Item: Suco
+# Índice: 4, Item: Refrigerante
+
+# Índice: 1, Item: Café
+# Índice: 2, Item: Chá
+# Índice: 3, Item: Água
+# Índice: 4, Item: Suco
+# Índice: 5, Item: Refrigerante
+
+# temperaturas = [-1,10,5,-3,8,4,-2,-5,7]
+# total = 0
+
+# for i, t in enumerate(temperaturas):
+#     if t < 0:
+#         print(f'A temperatura em {i} é negativa, com {t}ºC.')
+
+# Gerenciamento de contexto com with. Serve para encapsular e tornar código menor para executar uma função, código mais limpo.
+
+# try:
+#     a = open('furtas.dat', 'r', encoding='utf-8')
+#     print(a.read())
+# except IOError:
+#     print(f'Não foi possível abrir o arquivo')  # Abrir um arquivo e visualizar o conteúdo.
+# else:
+#     a.close()
+
+try:
+    with open('furtas.dat', 'r', encoding='utf-8') as a:
+        print(a.read())
+except FileNotFoundError:
+    print(f"O arquivo 'furtas.dat' não foi encontrado.")
+except OSError as e:
+    print(f"Ocorreu um erro ao abrir o arquivo: {e}")
