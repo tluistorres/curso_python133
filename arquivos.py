@@ -1,66 +1,84 @@
- # Manipulação de arquivos -modo open.
+# Manipulação de arquivos -modo open.
 
-# manipulador = open('arquivo.txt') # O importante é o nome do arquivo.
+manipulador = open('arquivo.txt') # O importante é o nome do arquivo.
 
-# manipulador = open('arquivo.txt', 'r', encoding='utf-8')
-# print(f'Método read():\n')
-# print(manipulador.read())
+manipulador = open('arquivo.txt', 'r', encoding='utf-8')
+print(f'Método read():\n')
+print(manipulador.read())
 
-# print(f'Método readline():\n')
-# print(manipulador.readline())
-# print(manipulador.readline())
-# print(manipulador.readline())
-# print(manipulador.readline())  # Retoma uma linha por vez. Tendo que repeti o comando readline para cada rpóxima linha.
+print(f'Método readline():\n')
+print(manipulador.readline())
+print(manipulador.readline())
+print(manipulador.readline())
+print(manipulador.readline())  
 
-# print(manipulador.readlines())   # Comando readlines, fornece uma lista com entre [], com as quatros linhas, onde poderemos manipular como linhas.
+# Retoma uma linha por vez. Tendo que repeti o comando readline para cada rpóxima linha.
 
-# try:
-#     manipulador = open('arquivo.txt', 'r', encoding='utf-8')
-#     for linha in manipulador:
-#         linha = linha.rstrip()    # Tira o espaço entre as linhas, mostra sem a quebra de linha.
-#         print(linha)
-# except IOError:
-#     print(f'Não foi possível abrir o arquivo')
-# else:
-#     manipulador.close()
+print(manipulador.readlines())   
 
-# try:
-#     manipulador = open('C:\\Users\\luist\OneDrive\\Documentos\\arquivo2.txt', 'r', encoding='utf-8')
-#     for linha in manipulador:
-#         linha = linha.rstrip()    # Tira o espaço entre as linhas, mostra sem a quebra de linha.
-#         print(linha)
-# except IOError:
-#     print(f'Não foi possível abrir o arquivo')
-# else:
-#     manipulador.close()
+# Comando readlines, fornece uma lista com entre [], com as quatros linhas, onde poderemos manipular como linhas.
+
+try:
+    manipulador = open('arquivo.txt', 'r', encoding='utf-8')
+    for linha in manipulador:
+        linha = linha.rstrip()    
+        
+        # Tira o espaço entre as linhas, mostra sem a quebra de linha.
+
+        print(linha)
+except IOError:
+    print(f'Não foi possível abrir o arquivo')
+else:
+    manipulador.close()
+
+try:
+    manipulador = open('C:\\Users\\luist\OneDrive\\Documentos\\arquivo2.txt', 'r', encoding='utf-8')
+    for linha in manipulador:
+        linha = linha.rstrip()    
+        
+# Tira o espaço entre as linhas, mostra sem a quebra de linha.
+
+        print(linha)
+except IOError:
+    print(f'Não foi possível abrir o arquivo')
+else:
+    manipulador.close()
 
 
 # Vamos voltar pro código anterior. Vamos fazer uma busca.
 
-# texto = input('Qual termo deseja procurar no arquivo?')
-# try:
-#     manipulador = open('arquivo.txt', 'r', encoding='utf-8')
-#     for linha in manipulador:
-#         linha = linha.rstrip()    # Tira o espaço entre as linhas, mostra sem a quebra de linha.
-#         if texto in linha:
-#             print('A strig foi encontrada!')
-#             print(linha)
+texto = input('Qual termo deseja procurar no arquivo?')
+try:
+    manipulador = open('arquivo.txt', 'r', encoding='utf-8')
+    for linha in manipulador:
+        linha = linha.rstrip()   
 
-# except IOError:
-#     print(f'Não foi possível abrir o arquivo')
-# else:
-#    print('String não encontrada!')
+# Tira o espaço entre as linhas, mostra sem a quebra de linha.
 
-# Gravando e escrevendo num arquivo de texto - método write.
+        if texto in linha:
+            print('A strig foi encontrada!')
+            print(linha)
+
+except IOError:
+    print(f'Não foi possível abrir o arquivo')
+else:
+   print('String não encontrada!')
+
+Gravando e escrevendo num arquivo de texto - método write.
 
 try:
-    manipulador = open('arquivo.txt', 'w', encoding='utf-8') # Bastas trocar o 'r' por 'w'.
+    manipulador = open('arquivo.txt', 'w', encoding='utf-8') 
+    
+    # Bastas trocar o 'r' por 'w'.
+
     manipulador.write('Bóson Trinamentos\n')
     manipulador.write('Como criar um arquivo de texto com Python.')
 except IOError:
     print(f'Não foi possível abrir o arquivo')
 else:
-    manipulador.close() # Agora é só visulazar  no arquivo que foi substituído o texto anterior.
+    manipulador.close() 
+    
+# Agora é só visulazar  no arquivo que foi substituído o texto anterior.
 
 # Adicionar um texto ao atual - trocar o 'w' por 'a' de appen, adicionar.
 
@@ -78,7 +96,10 @@ else:
 
 texto = '\nPython é usado em ciências de dados extensivamente.'
 try:
-    manipulador = open('arquivo.txt', 'a', encoding='utf-8') # Bastas trocar o 'w' por 'a'.
+    manipulador = open('arquivo.txt', 'a', encoding='utf-8') 
+    
+# Bastas trocar o 'w' por 'a'.
+
     manipulador.write(texto)
 except IOError:
     print(f'Não foi possível abrir o arquivo')
@@ -86,28 +107,37 @@ else:
     manipulador.close()
 texto = '\nPython é usado em ciências de dados extensivamente.'
 
-###############################################################################################
+#####################################################################
 
 # Criar e gravar o arquivo.
 
-# frutas = ['Morango\n', 'Uva\n', 'Caju\n', 'Amora\n', 'Framboesa\n', 'Graviola']
-# try:
-#     manipulador = open('frutas.dat', 'w', encoding='utf-8') # Bastas trocar o 'w' por 'a'.
-#     manipulador.writelines(frutas)  # writelines de listas.
-# except IOError:
-#     print(f'Não foi possível abrir o arquivo')
-# else:
-#     manipulador.close()
+frutas = ['Morango\n', 'Uva\n', 'Caju\n', 'Amora\n', 'Framboesa\n', 'Graviola']
+try:
+    manipulador = open('frutas.dat', 'w', encoding='utf-8') 
+
+# Bastas trocar o 'w' por 'a'.
+
+    manipulador.writelines(frutas)  
+    
+# writelines de listas.
+
+except IOError:
+    print(f'Não foi possível abrir o arquivo')
+else:
+    manipulador.close()
 
 # Lê o arquivo criado. Precisamos do comando 'r', lê porque 'w' só permite gravar.
 
-# try:
-#     manipulador = open('frutas.dat', 'r', encoding='utf-8')  # Trocar o 'w' por 'r1'.
-#     print(manipulador.read())
-# except IOError:
-#     print(f'Não foi possível abrir o arquivo')
-# else:
-#     manipulador.close()
+try:
+    manipulador = open('frutas.dat', 'r', encoding='utf-8')  
+    
+# Trocar o 'w' por 'r1'.
+
+    print(manipulador.read())
+except IOError:
+    print(f'Não foi possível abrir o arquivo')
+else:
+    manipulador.close()
 
 # Morango
 # Uva
@@ -116,9 +146,9 @@ texto = '\nPython é usado em ciências de dados extensivamente.'
 # Framboesa
 # Graviola
 
-############################################################################################
+#######################################################################
 
-#Modos de abertura de arquivos.
+# Modos de abertura de arquivos:
 
 # Exemplos:
 
@@ -133,10 +163,13 @@ texto = '\nPython é usado em ciências de dados extensivamente.'
 
 # Lembre-se de sempre fechar o arquivo após usar, para evitar problemas de segurança e desempenho. Você pode usar o método close() ou o gerenciador de contexto with para fechar o arquivo automaticamente.
 
-# Abrindo aquivos. Caso exista, apaga e cria novo arquivo.
+# Abrindo aquivos. Caso exista, apaga e cria novo arquivo:
 
 arquivo = open('números.txt', 'w')
-for linha in range(1,101):  # O for para gerar os números de linha, usando o método write.
+for linha in range(1,101):  
+    
+# O for para gerar os números de linha, usando o método write.
+
     arquivo.write(f'{linha}\n')
 arquivo.close() 
 
@@ -145,9 +178,13 @@ arquivo.close()
 # Abrindo, lendo e fechando um arquivo.
 
 arquivo = open('números.txt', 'r')
-for linha in arquivo.readlines():# Gera uma lista em que cada elemento é uma linha do aruivo
+for linha in arquivo.readlines():
+
+# Gera uma lista em que cada elemento é uma linha do aruivo.
+
     print(linha)
 arquivo.close() 
+
 # Sempre que manipulamos arquivos, teremos uma abertura, operações e fechamento.
 # Apaga o aquivo 'números.txt',e gera um novo arquivo com uma lista de elementos.
 
@@ -222,13 +259,15 @@ with open('números.txt', 'r') as arquivo:
 
 # Vamos criar o diretório pai e filho:
 
-# import os
+import os
 
-# if not os.path.exists('pai'):
-#     os.mkdir('pai')
+if not os.path.exists('pai'):
+    os.mkdir('pai')
 
-# if not os.path.exists('pai/filho'):
-#     os.mkdir('pai/filho')  # Cria o diretório "pai" e também o diretório "filho" dentro dele:
+if not os.path.exists('pai/filho'):
+    os.mkdir('pai/filho')  
+
+# Cria o diretório "pai" e também o diretório "filho" dentro dele:
 
 # Irá listar os diretórios e arquivos dentro do diretório atual, incluindo os diretórios "pai" e "filho" que foram criados.]
 
@@ -251,10 +290,20 @@ print(os.listdir())
 # Parâmetros de linha de comando. Escrever programas que podem ser chamados de várias formas diferentes pela linha de comando, mas sem mudar o programa em si.
 # Podemos acessar os parâmetros passados ao programa na linha de comando utilizando o módulo sys e trabalhando com listas argv.
 
-import sys   # O módulo sys fornece acesso a algumas variáveis e funções usadas ou mantidas pelo interpretador Python.
-print(f'Números de parâmetros: {len(sys.argv)}')  # Imprimindo o número de parâmetros:
-for n,p in enumerate(sys.argv): # Imprimindo cada parâmetro.
+import sys   
+
+# O módulo sys fornece acesso a algumas variáveis e funções usadas ou mantidas pelo interpretador Python.
+
+print(f'Números de parâmetros: {len(sys.argv)}')  
+
+# Imprimindo o número de parâmetros:
+
+for n,p in enumerate(sys.argv): 
+    
+# Imprimindo cada parâmetro.
+
     print(f'Parâmetro {n} = {p}')
+
 # Aqui, estamos usando a função enumerate() que retorna uma lista de tuplas, onde cada tupla contém o índice e o valor do elemento na lista.
 # No caso, estamos enumerando a lista sys.argv e imprimindo cada parâmetro com seu índice correspondente.
 
@@ -271,9 +320,11 @@ for n,p in enumerate(sys.argv): # Imprimindo cada parâmetro.
 # Suponha que você tenha um script chamado ola.py com o seguinte conteúdo:
 
 
-# import sys
+import sys
 
-# print(f'Olá, {sys.argv[1]}!')  # Argumento [0], 'Olá', adicionamos arg.[1], 'João'
+print(f'Olá, {sys.argv[1]}!')  
+
+# Argumento [0], 'Olá', adicionamos arg.[1], 'João'
 
 # Para passar o argumento "João" para o script, você pode executar o seguinte comando na linha de comando:
 
@@ -284,19 +335,20 @@ for n,p in enumerate(sys.argv): # Imprimindo cada parâmetro.
 # Olá, João!
 
 # Exemplo 2: Passando múltiplos argumentos:
+
 # Suponha que você tenha um script chamado soma.py com o seguinte conteúdo:
 
-# import sys
+import sys
 
-# if len(sys.argv) != 3:
-#     print("Erro: número de argumentos inválido.")
-# else:
-#     try:
-#         num1 = float(sys.argv[1])
-#         num2 = float(sys.argv[2])
-#         print(f'A soma de {num1} e {num2} é {num1 + num2}.')
-#     except ValueError:
-#         print("Erro: argumentos não são números.")
+if len(sys.argv) != 3:
+    print("Erro: número de argumentos inválido.")
+else:
+    try:
+        num1 = float(sys.argv[1])
+        num2 = float(sys.argv[2])
+        print(f'A soma de {num1} e {num2} é {num1 + num2}.')
+    except ValueError:
+        print("Erro: argumentos não são números.")
 
 # Para passar os argumentos "10" e "20" para o script, você pode executar o seguinte comando na linha de comando:
 
@@ -317,9 +369,9 @@ for n,p in enumerate(sys.argv): # Imprimindo cada parâmetro.
 
 # E modificar o script para:
 
-# import sys
+import sys
 
-# print(f'Olá, {sys.argv[1]}! Você tem {sys.argv[2]} anos.')
+print(f'Olá, {sys.argv[1]}! Você tem {sys.argv[2]} anos.')
 
 # A saída seria:
 
@@ -353,7 +405,7 @@ with open('ímpares.txt', 'w') as ímpares, open('pares.txt', 'w') as pares:
         else:
                 ímpares.write(f'{n}\n')
 
-#######################################################################################
+#######################################################################
 
 # Leitura e escrita.
 
@@ -365,7 +417,7 @@ with open('múltiplos de 4.txt', 'w') as multiplos4:
 
 # Se rodarmos o programa e não deu erro, arquivosd gerados com suceso.
 
-#######################################################################################
+#######################################################################
 
 # Processamento de um arquivo.
 
@@ -398,78 +450,78 @@ with open('entrada.txt', encoding='utf-8') as entrada:
         else:
             print(linha)
 
-##########################################################################################
+#######################################################################
 
 # Exemplo de código para uma agenda de telefones em Python:
 
-# class Contato:
-#     def __init__(self, nome, telefone):
-#         self.nome = nome
-#         self.telefone = telefone
+class Contato:
+    def __init__(self, nome, telefone):
+        self.nome = nome
+        self.telefone = telefone
 
-# class Agenda:
-#     def __init__(self):
-#         self.contatos = []
+class Agenda:
+    def __init__(self):
+        self.contatos = []
 
-#     def adicionar_contato(self, nome, telefone):
-#         contato = Contato(nome, telefone)
-#         self.contatos.append(contato)
-#         print(f"Contato {nome} adicionado com sucesso!")
+    def adicionar_contato(self, nome, telefone):
+        contato = Contato(nome, telefone)
+        self.contatos.append(contato)
+        print(f"Contato {nome} adicionado com sucesso!")
 
-#     def remover_contato(self, nome):
-#         for contato in self.contatos:
-#             if contato.nome == nome:
-#                 self.contatos.remove(contato)
-#                 print(f"Contato {nome} removido com sucesso!")
-#                 return
-#         print(f"Contato {nome} não encontrado.")
+    def remover_contato(self, nome):
+        for contato in self.contatos:
+            if contato.nome == nome:
+                self.contatos.remove(contato)
+                print(f"Contato {nome} removido com sucesso!")
+                return
+        print(f"Contato {nome} não encontrado.")
 
-#     def buscar_contato(self, nome):
-#         for contato in self.contatos:
-#             if contato.nome == nome:
-#                 print(f"Contato {nome} encontrado:")
-#                 print(f"Telefone: {contato.telefone}")
-#                 return
-#         print(f"Contato {nome} não encontrado.")
+    def buscar_contato(self, nome):
+        for contato in self.contatos:
+            if contato.nome == nome:
+                print(f"Contato {nome} encontrado:")
+                print(f"Telefone: {contato.telefone}")
+                return
+        print(f"Contato {nome} não encontrado.")
 
-#     def listar_contatos(self):
-#         print("Contatos:")
-#         for contato in self.contatos:
-#             print(f"{contato.nome}: {contato.telefone}")
+    def listar_contatos(self):
+        print("Contatos:")
+        for contato in self.contatos:
+            print(f"{contato.nome}: {contato.telefone}")
 
-# def main():
-#     agenda = Agenda()
+def main():
+    agenda = Agenda()
 
-#     while True:
-#         print("1. Adicionar contato")
-#         print("2. Remover contato")
-#         print("3. Buscar contato")
-#         print("4. Listar contatos")
-#         print("5. Sair")
+    while True:
+        print("1. Adicionar contato")
+        print("2. Remover contato")
+        print("3. Buscar contato")
+        print("4. Listar contatos")
+        print("5. Sair")
 
-#         opcao = input("Escolha uma opção: ")
+        opcao = input("Escolha uma opção: ")
 
-#         if opcao == "1":
-#             nome = input("Digite o nome do contato: ")
-#             telefone = input("Digite o telefone do contato: ")
-#             agenda.adicionar_contato(nome, telefone)
-#         elif opcao == "2":
-#             nome = input("Digite o nome do contato a remover: ")
-#             agenda.remover_contato(nome)
-#         elif opcao == "3":
-#             nome = input("Digite o nome do contato a buscar: ")
-#             agenda.buscar_contato(nome)
-#         elif opcao == "4":
-#             agenda.listar_contatos()
-#         elif opcao == "5":
-#             break
-#         else:
-#             print("Opção inválida. Tente novamente.")
+        if opcao == "1":
+            nome = input("Digite o nome do contato: ")
+            telefone = input("Digite o telefone do contato: ")
+            agenda.adicionar_contato(nome, telefone)
+        elif opcao == "2":
+            nome = input("Digite o nome do contato a remover: ")
+            agenda.remover_contato(nome)
+        elif opcao == "3":
+            nome = input("Digite o nome do contato a buscar: ")
+            agenda.buscar_contato(nome)
+        elif opcao == "4":
+            agenda.listar_contatos()
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
 
-########################################################################################
+#######################################################################
 
 # Geração de HTML5 - Criação de uma página inicial em Python.
 
@@ -516,49 +568,49 @@ with open('página.html', 'w', encoding='utf-8') as página:
 
 # webbrowser.open('página.html')
 
-########################################################################################
+#######################################################################
 
 # Python oferece recursos mais interesantes para trabalhar com strings , como aspas triplas que permitem escrever longos textos mais facilmente.
 
-# with open('página.html', 'w', encoding='utf-8') as página:
-#     página.write("""
-# <!DOCTYPE html>
-# <html lang="pt-BR>
-# <head>
-# <meta charset="utf-8">
-# <title>Título da Página</title>
-# </head>
-# <body>
-# Olá mundo tão desigual, uma loucura Total, cada um pensando "só em si", ou nos iguais!""")
-#     for linha in range(10):
-#         página.write(f'<p>{linha}</p>\n')
-#     página.write("""
-# </body>
-# </html>""")
+with open('página.html', 'w', encoding='utf-8') as página:
+    página.write("""
+<!DOCTYPE html>
+<html lang="pt-BR>
+<head>
+<meta charset="utf-8">
+<title>Título da Página</title>
+</head>
+<body>
+Olá mundo tão desigual, uma loucura Total, cada um pensando "só em si", ou nos iguais!""")
+    for linha in range(10):
+        página.write(f'<p>{linha}</p>\n')
+    página.write("""
+</body>
+</html>""")
     
-# # Geração de uma página web a partir de um dicionário.
+# Geração de uma página web a partir de um dicionário.
 
-# filmes = {
-#     'drama': ['Cidadão kane', 'O Poderoso Chefão'],
-#     'comédia': ['Tempos Modernos', 'América Pie', 'Dr. Dollitle'],
-#     'policial': ['Chuva Negra', 'Desejo de Matar', 'Dfícil de Matar'],
-#     'guerra': ['Rambo','Platon', 'Tora!Tora!Tora!']
-# }
+filmes = {
+    'drama': ['Cidadão kane', 'O Poderoso Chefão'],
+    'comédia': ['Tempos Modernos', 'América Pie', 'Dr. Dollitle'],
+    'policial': ['Chuva Negra', 'Desejo de Matar', 'Dfícil de Matar'],
+    'guerra': ['Rambo','Platon', 'Tora!Tora!Tora!']
+}
 
-# with open('filmes.html', 'w', encoding='utf-8') as página:
-#     página.write("""<!DOCTYPE html>
-# <html lang="pt-BR">
-# <head>
-# <meta charset="utf-8">
-# <title>Filmes</title>
-# </head>
-# <body>""")
-#     for c, v in filmes.items():
-#         página.write(f'<h1>{c}</h1>\n')
-#         for e in v:
-#             página.write(f'<h2>{e}</h2>\n')
-#     página.write("""</body>
-# </html>""")
+with open('filmes.html', 'w', encoding='utf-8') as página:
+    página.write("""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Filmes</title>
+</head>
+<body>""")
+    for c, v in filmes.items():
+        página.write(f'<h1>{c}</h1>\n')
+        for e in v:
+            página.write(f'<h2>{e}</h2>\n')
+    página.write("""</body>
+</html>""")
     
 ###########################################################################################################
 
@@ -805,29 +857,29 @@ else:
 
 # Se você quiser verificar se o diretório "curso_python" existe no diretório "C:\Users\luist\OneDrive\Documentos\cuurso_python", você precisa fornecer o caminho completo:
 
-# import os
+import os
 
-# caminho = r'C:\Users\luist\OneDrive\Documentos\curso_python'
+caminho = r'C:\Users\luist\OneDrive\Documentos\curso_python'
 
-# if os.path.isdir(caminho):
-#     print(f'{caminho} é um diretório.')
-# elif os.path.isfile(caminho):
-#     print(f'{caminho} é um arquivo.')
-# else:
-#     print(f'{caminho} não é um diretório ou arquivo.')
+if os.path.isdir(caminho):
+    print(f'{caminho} é um diretório.')
+elif os.path.isfile(caminho):
+    print(f'{caminho} é um arquivo.')
+else:
+    print(f'{caminho} não é um diretório ou arquivo.')
 
 # Usando True e False para verificar se um caminho é um diretório ou arquivo.
 
 
-# import os
+import os
 
-# caminho = r'C:\Users\luist\OneDrive\Documentos\curso_python'
+caminho = r'C:\Users\luist\OneDrive\Documentos\curso_python'
 
-# diretorio = os.path.isdir(caminho)
-# arquivo = os.path.isfile(caminho)
+diretorio = os.path.isdir(caminho)
+arquivo = os.path.isfile(caminho)
 
-# print(f'Diretório: {diretorio}')
-# print(f'Arquivo: {arquivo}')
+print(f'Diretório: {diretorio}')
+print(f'Arquivo: {arquivo}')
 
 # Propriedades de um arquivo.
 
@@ -954,6 +1006,7 @@ agora = time.localtime()
 print(time.strftime('%a %d/%m/%y %H:%M', agora))
 
 # Saída:
+
 # Tue 04/03/25 07:57
 
 print(time.strftime('Hoje é o %j dia do ano de %Y', agora))
@@ -977,6 +1030,7 @@ data_hora = time.localtime()
 print(data_hora)
 
 # Saída:
+
 # time.struct_time(tm_year=2025, tm_mon=3, tm_mday=4, tm_hour=8, tm_min=19, tm_sec=9, tm_wday=1, tm_yday=63, tm_isdst=0).
 
 # Usos de caminhos.
@@ -994,7 +1048,7 @@ print(data_hora)
 # import os.path
 # os.path.join("C:", "Ddados", "programas")
 
-#######################################################################################
+#######################################################################
 
 # Pathlib - outra forma de navegar nos diretórios e arquivos com um programa em Python utilizando a pathlib.É a forma mais moderna e orientada a objetos. A pathlib não considera os caminhos como strings, mas como objetos que podem ser manipulados e combinados.
 
@@ -1110,7 +1164,7 @@ with Path('arquivo.txt').open(encoding='utf-8') as f:
 # Como criar um arquivo de texto com Python.
 # Python é usado em ciências de dados extensivamente.
 
-########################################################################################
+#######################################################################
 
 # Para executar o comando como administrador no Windows 10/11, basta:
 
@@ -1118,7 +1172,7 @@ with Path('arquivo.txt').open(encoding='utf-8') as f:
 # 2. Selecione "Executar como administrador".
 # 3. Confirme que deseja executar o comando como administrador.
 
-########################################################################################
+#######################################################################
 
 # Visita a todos os diretórios recursivamente
 
@@ -1288,23 +1342,28 @@ for raiz, diretórios, arquivos in os.walk(caminho):
 
 from datetime import date, time, datetime, timedelta
 
-# Criar uma data
+# Criar uma data.
+
 data_atual = date.today()
 print(data_atual)
 
-# Criar uma hora
+# Criar uma hora.
+
 hora_atual = time(12, 30, 0)
 print(hora_atual)
 
-# Criar uma data e hora
+# Criar uma data e hora.
+
 data_hora_atual = datetime.now()
 print(data_hora_atual)
 
-# Somar um intervalo de tempo
+# Somar um intervalo de tempo.
+
 data_hora_futura = data_hora_atual + timedelta(days=30)
 print(data_hora_futura)
 
-# Formatar uma data e hora
+# Formatar uma data e hora.
+
 data_hora_formatada = data_hora_atual.strftime("%d/%m/%Y %H:%M:%S")
 print(data_hora_formatada)
 
@@ -1392,7 +1451,7 @@ data_hora_iso = momento.isoformat()
 
 print("Data e hora ISO:", data_hora_iso)
 
-# Data e hora ISO: 2025-03-04T15:34:24.804196
+# Data e hora ISO: 2025-03-04T15:34:24.804196.
 # Esse código usa o método isoformat() da classe datetime para converter a data e hora atual em uma string no formato ISO 8601, muito utilizada na web e principalmente para converter data e hora em string que retorna numa string no formato ISO8601.
 
 from datetime import datetime
@@ -1436,7 +1495,8 @@ momento = datetime.now()
 data_hora_iso = momento.isoformat()
 print("Data e hora atual ISO:", data_hora_iso)
 
-# Data futura
+# Data futura.
+
 ano = 2030
 mes = 12
 dia = 31
@@ -1503,7 +1563,7 @@ import zoneinfo
 for zona in sorted(zoneinfo.available_timezones()):
     print(zona)
 
-#####################################################################################
+#######################################################################
 
 # Arquivos JSON:
 
@@ -1555,24 +1615,24 @@ print(dados_lidos)   # {'nome': 'João', 'idade': 30, 'cidade': 'São Paulo'}
 
 # Lendo um arquivo JSON.
 
-# import json
-# from pathlib import Path
-# with Path("dados.json").open() as arquivo:
-#     dados = json.load(arquivo)
-# print(dados["nome"])
-# print(dados["valores"])
+import json
+from pathlib import Path
+with Path("dados.json").open() as arquivo:
+    dados = json.load(arquivo)
+print(dados["nome"])
+print(dados["valores"])
 
 # Abrindom uma arquivo JSON e usando os dados
 
-# import json
-# from pathlib import Path
-# with Path("lista.json").open(encoding='utf-8') as arquivo:
-#     turma = json.load[arquivo]
-# for aluno in turma:
-#     print('Nome:', aluno['nome'])
-#     print('Notas:', aluno['notas'])
-#     print('Média:', sum(aluno['notas']) / len(aluno['notas']))
-#     print()
+import json
+from pathlib import Path
+with Path("lista.json").open(encoding='utf-8') as arquivo:
+    turma = json.load[arquivo]
+for aluno in turma:
+    print('Nome:', aluno['nome'])
+    print('Notas:', aluno['notas'])
+    print('Média:', sum(aluno['notas']) / len(aluno['notas']))
+    print()
 
 # Criando uma tabela de preço:
 
@@ -1597,7 +1657,7 @@ for produto, preço in tabela_de_preços.items():
 with Path('Preços.json').open('w', encoding='utf-8') as arquivo:
     json.dump(tabela_de_preços, arquivo)
 
-####################################################################################
+#######################################################################
 
 # Arquivos binários:  O código salva a imagem como um arquivo binário no formato BMP, com a extensão ".bin".
 
@@ -1607,7 +1667,9 @@ img = Image.new('RGB', (100, 100))     # Criar uma imagem vazia com 100x100 pixe
 for x in range(100):                   
     for y in range(100):               # Definir os pixels da imagem.
         img.putpixel((x, y), (x, y, 0)) 
-img.save('imagem.bin', 'BMP')          # Salvar a imagem como um arquivo binário.
+img.save('imagem.bin', 'BMP')          
+
+# Salvar a imagem como um arquivo binário.
 
 # Um código Python que utiliza a biblioteca Pillow para criar uma imagem RGB de 100x100 pixels e, em seguida, imprime os valores hexadecimais dos pixels da imagem.
 
@@ -1718,3 +1780,17 @@ with open(ARQUIVO, 'wb') as f:       # Grave o arquivo
 # 40   1000000
 # 80   10000000
 # 100  100000000
+
+# Programa 9.18: Visualizador de arquivos em formato binário:
+
+import sys
+import itertools
+def imprime_bytes(imagem, bytes_por_linha=16):
+    for b in itertools.batched(imagem, bytes_por_linha):
+        hex_view = " ".join([f"{v:02x} for v in b"])
+        tview = "".join([chr(v) if chr(v).isprintable() else "." for v in b])
+        print(f"{hex_view} {"" * 3 * (bytes_por_linha - len(b))}{tview}")
+if __name__ == "__main__":
+    with open(sys.argv[1], "rb") as f:
+        imagem = f.read( )
+    imprime_bytes(imagem)

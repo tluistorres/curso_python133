@@ -18,7 +18,10 @@ print(f'O dicionário possui {len(elemento)} elementos')
 
 # Atualizar uma entrada.
 
-elemento['grupo'] = 'Alcalinos' # Trocar 'Metais Alcalinos' por 'Alcalinos'.
+elemento['grupo'] = 'Alcalinos' 
+
+# Trocar 'Metais Alcalinos' por 'Alcalinos'.
+
 print(elemento)
 
 # Adicionar uma entrada.
@@ -36,14 +39,16 @@ print(elemento)
 # elemento.clear()
 # print(elemento)
 
-# # Apagar totalmente o dicionário.
+# Apagar totalmente o dicionário.
 
 # del elemento
 # print(elemento)
 
 # Retorna os ítens apagados do dicionários.
 
-print(elemento.items())  # Os items é uma lista de tuplas: dict_items([('Z', 3), ('nome', 'Lítio'), ('grupo', 'Alcalinos'), ('densidade', 0.534)])
+print(elemento.items())  
+
+# Os items é uma lista de tuplas: dict_items([('Z', 3), ('nome', 'Lítio'), ('grupo', 'Alcalinos'), ('densidade', 0.534)])
 
 # Laço for: mostra as tuplas separadas, ficando mais fácil de acessar as informações.
 

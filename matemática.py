@@ -1,18 +1,18 @@
-#Funções builtin
+# Funções builtin:
 
-# valores = [ 1 , 2 , 5 , 8 , 10 , -6 , 0 ]
-# print(max(valores))
-# print(min(valores))
+valores = [ 1 , 2 , 5 , 8 , 10 , -6 , 0 ]
+print(max(valores))
+print(min(valores))
 
-# a = -5
-# b = 10
-# print(abs(a)) # Valor absoluto
-# print(abs(b))
+a = -5
+b = 10
+print(abs(a)) # Valor absoluto
+print(abs(b))
 
-# c = 2.789011
-# print(round(c,2)) # Aroxima o valor com duas casas decimais
+c = 2.789011
+print(round(c,2)) # Aroxima o valor com duas casas decimais
 
-# O documento math está na pg: https://docs.python.org/3/library/math.html
+# O documento math está na pg: https://docs.python.org/3/library/math.html.
 
 import math
 

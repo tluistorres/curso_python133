@@ -2,16 +2,16 @@
 # Representam uma sequência de valores.
 # Sintaxe: nome_lista = [valors].
 
-# notas = [5,7,8,10]
-# print(notas)
-# n1 = [5,7,8,10]
-# n2 = [6,6,10,8]
-# valores = n1 + n2
-# print(valores)         # Podemos concatenar listas.
-# print(type(valores))   # Tipo do objeto. <class 'list'>
-# print(valores[4])      # 6
-# print(valores[-1])
-# print(valores[-2]))
+notas = [5,7,8,10]
+print(notas)
+n1 = [5,7,8,10]
+n2 = [6,6,10,8]
+valores = n1 + n2
+print(valores)         # Podemos concatenar listas.
+print(type(valores))   # Tipo do objeto. <class 'list'>
+print(valores[4])      # 6
+print(valores[-1])
+print(valores[-2]))
 
 n1 = [5,7,8,10]
 n2 = [6,6,10,8]
@@ -19,6 +19,7 @@ n2 = [6,6,10,8]
 valores = n1 + n2
 valores[2] = 10
 print(valores)
+
 # Posição slice - serve para acesar valores de uma lista.
 
 print(valores[0:4])   # [5,7,10,10]
@@ -33,6 +34,7 @@ print(min(valores))
 print(max(valores))
 
 # Acrescenta valores a lista - append.
+
 valores.append(20)   # Primeiro manda acrescentar valor a lista.
 print(valores)
 valores.pop()        # Remove o último elemento.
@@ -48,10 +50,10 @@ print("a" in valores)# False
 
 # Pode criar uma lista de strigs.
 
-# planetas = ['Mercúrio','Vênus','Marte','Saturno']
-# print(planetas)
-# for planeta in planetas:
-#     print(planeta)          # "docs.python.org"
+planetas = ['Mercúrio','Vênus','Marte','Saturno']
+print(planetas)
+for planeta in planetas:
+    print(planeta)          # "docs.python.org"
 
 # Lista de bebidas.
 
@@ -65,7 +67,9 @@ print(f'\nBebidas escolhidas: ')
 for bebida in bebidas:
     print(bebida)
 
-bebidas.sort()  # Classifica e ordena automaticamente em orfem alfabética.
+bebidas.sort()  
+
+# Classifica e ordena automaticamente em orfem alfabética.
 
 print(f'\nSaúde!')
 
